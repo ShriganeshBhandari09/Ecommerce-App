@@ -10,28 +10,28 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      <div className="flex gap-6 text-lg uppercase font-medium">
+      <div className="flex gap-5 uppercase font-medium">
         <NavLink to="/">
-          <p className="text-[#2A2A2A]">Home</p>
+          <p className="text-[#2A2A2A] text-base">Home</p>
           <hr className="w-6/12 mx-auto h-[3px] bg-[#303030] hidden " />
         </NavLink>
         <NavLink to="/collections">
-          <p className="text-[#2A2A2A]">Collections</p>
+          <p className="text-[#2A2A2A] text-base">Collections</p>
           <hr className="w-6/12 mx-auto h-[3px] bg-[#303030] hidden" />
         </NavLink>
         <NavLink to="/about">
-          <p className="text-[#2A2A2A]">About</p>
+          <p className="text-[#2A2A2A] text-base">About</p>
           <hr className="w-6/12 mx-auto h-[3px] bg-[#303030] hidden" />
         </NavLink>
         <NavLink to="/contact">
-          <p className="text-[#2A2A2A]">Contact</p>
+          <p className="text-[#2A2A2A] text-base">Contact</p>
           <hr className="w-6/12 mx-auto h-[3px] bg-[#303030] hidden" />
         </NavLink>
       </div>
 
       <div className="flex gap-4">
         <img src={assets.search_icon} alt="" className="w-[24px] h-[24px]" />
-        <NavLink to="/profile">
+        <NavLink to="/login">
           <img src={assets.profile_icon} alt="" className="w-[24px] h-[24px]" />
         </NavLink>
         <NavLink to="/cart">
