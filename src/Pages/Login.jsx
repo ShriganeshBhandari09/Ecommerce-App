@@ -11,21 +11,21 @@ const Login = () => {
 
       <div className="w-full flex flex-col gap-4 sm:w-3/4 sm:mx-auto lg:w-1/3">
         <div>
-          <label htmlFor="">Email</label>
+          <label htmlFor="email">Email</label>
           <input
             type="email"
-            name=""
-            id=""
+            name="email"
+            id="email"
             placeholder="Email"
             className="border border-black px-3 py-2 w-full"
           />
         </div>
         <div>
-          <label htmlFor="">Password</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
-            name=""
-            id=""
+            name="password"
+            id="password"
             placeholder="Password"
             className="border border-black px-3 py-2 w-full"
           />
@@ -43,7 +43,7 @@ const Login = () => {
         </button>
 
         <div className="text-center">
-          Don&apos;t have an account? <NavLink to="/signup">Signup</NavLink>
+          Don&apos;t have an account? <NavLink to="/signup" className="text-[#868686] underline">Signup</NavLink>
         </div>
       </div>
     </div>

@@ -7,8 +7,10 @@ const ProductCard = ({ product }) => {
         <div>
           <img src={product.image[0]} alt="" />
           <div className="px-2 pt-1">
-            <p className="text-[#494949] font-normal">{product.name}</p>
-            <p>${product.price}</p>
+            <p className="text-[#494949] font-normal text-sm sm:text-base">
+              {product.name}
+            </p>
+            <p className="font-medium">${product.price}</p>
           </div>
         </div>
       </NavLink>

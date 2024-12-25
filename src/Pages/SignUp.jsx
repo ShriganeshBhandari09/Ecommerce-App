@@ -11,31 +11,31 @@ const SignUp = () => {
 
       <div className="w-full flex flex-col gap-4 sm:w-3/4 sm:mx-auto lg:w-1/3">
         <div>
-          <label htmlFor="">Name</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
-            name=""
-            id=""
+            name="name"
+            id="name"
             placeholder="Name"
             className="border border-black px-3 py-2 w-full"
           />
         </div>
         <div>
-          <label htmlFor="">Email</label>
+          <label htmlFor="email">Email</label>
           <input
             type="email"
-            name=""
-            id=""
+            name="email"
+            id="email"
             placeholder="Email"
             className="border border-black px-3 py-2 w-full"
           />
         </div>
         <div>
-          <label htmlFor="">Password</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
-            name=""
-            id=""
+            name="password"
+            id="password"
             placeholder="Password"
             className="border border-black px-3 py-2 w-full"
           />
@@ -53,7 +53,7 @@ const SignUp = () => {
         </button>
 
         <div className="text-center">
-          Have an Account? <NavLink to="/login">Login</NavLink>
+          Have an Account? <NavLink to="/login" className="text-[#868686] underline">Login</NavLink>
         </div>
       </div>
     </div>

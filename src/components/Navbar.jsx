@@ -1,9 +1,12 @@
 import { NavLink } from "react-router";
 import { assets } from "../assets/assets";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
+  const cartProducts = useSelector((state) => state.cart.cartList);
+
 
   const handleNavbar = () => {
     setNavActive(!navActive);
@@ -17,7 +20,7 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        <div className="hidden md:flex gap-4">
+        <div className="hidden md:flex gap-4 uppercase">
           <NavLink to="/">
             <p className="text-[#2A2A2A] text-base">Home</p>
             <hr className="w-6/12 mx-auto h-[3px] bg-[#303030] hidden " />
@@ -53,7 +56,7 @@ const Navbar = () => {
                 className="w-[20px] h-[20px]"
               />
               <p className="absolute top-3 bg-black text-white left-2 rounded-full px-1 flex justify-center items-center text-xs">
-                10
+                {cartProducts.length}
               </p>
             </div>
           </NavLink>
