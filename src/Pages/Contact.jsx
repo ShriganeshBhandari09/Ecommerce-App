@@ -6,7 +6,9 @@ import Title from "../components/title";
 const Contact = () => {
   return (
     <div className="border-t-2 ">
-      <Title titleOne={"Contact"} titleTwo={"Us"} />
+      <div className="p-4">
+        <Title titleOne={"Contact"} titleTwo={"Us"} />
+      </div>
 
       <div className="flex justify-center items-center gap-5 flex-col sm:flex-row sm:gap-10 sm:p-10 mb-20">
         <div>
