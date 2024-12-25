@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 const Login = () => {
   return (
@@ -33,9 +33,9 @@ const Login = () => {
             <p>Create Account</p>
           </NavLink>
         </div>
-        <button className="border px-4 py-2">Login</button>
+        <button className="border px-7 py-2 bg-black text-white m-4">Login</button>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

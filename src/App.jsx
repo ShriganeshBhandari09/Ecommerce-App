@@ -9,6 +9,7 @@ import Cart from "./Pages/Cart";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import ForgotPassword from "./Pages/ForgotPassword";
+import ProductPage from "./Pages/ProductPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="product/:id" element={<ProductPage/>}/>
       </Routes>
     </div>
   );

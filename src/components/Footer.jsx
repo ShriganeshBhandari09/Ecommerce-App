@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { assets } from "../assets/assets";
 
 const Footer = () => {
@@ -27,13 +28,22 @@ const Footer = () => {
           <ul className="text-[#595959] flex flex-col gap-1">
             <li>+1-000-000-0000</li>
             <li>shriganesh.bhandari693@gmail.com</li>
-            <li>Instagram</li>
+            <Link
+              to="https://www.instagram.com/shriganeshbhandari/"
+              target="_blank"
+            >
+              <li>Instagram</li>
+            </Link>
           </ul>
         </div>
       </div>
       <hr className="my-4 border-[#D9D9D9]" />
       <p className="text-center text-[#595959]">
-        Copyright 2024@ Shriganesh Bhandari - All Right Reserved.
+        Copyright 2024@ <span> </span>
+        <Link to="https://github.com/ShriganeshBhandari09" target="_blank">
+          Shriganesh Bhandari
+        </Link>
+        <span> </span>- All Right Reserved.
       </p>
     </div>
   );

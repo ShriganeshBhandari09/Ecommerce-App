@@ -1,5 +1,5 @@
-import { NavLink } from "react-router";
-import Footer from "../components/Footer";
+// import { NavLink } from "react-router";
+// import Footer from "../components/Footer";
 
 const SignUp = () => {
   return (
@@ -32,14 +32,16 @@ const SignUp = () => {
             className="border border-black px-3 py-2"
           />
         </div>
-        <div className="flex items-end justify-end gap-4 w-full cursor-pointer">
+        {/* <div className="flex items-end justify-end gap-4 w-full cursor-pointer">
           <NavLink to="/login">
             <p>Login Here</p>
           </NavLink>
-        </div>
-        <button className="border px-4 py-2">Sign Up</button>
+        </div> */}
+        <button className="border px-7 py-2 bg-black text-white m-4">
+          Signup
+        </button>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
