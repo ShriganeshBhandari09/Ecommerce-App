@@ -13,7 +13,7 @@ import ProductPage from "./Pages/ProductPage";
 
 function App() {
   return (
-    <div className="px-[9vw]">
+    <div className="px-3 sm:px-[5vw] lg:px-[9vw]">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

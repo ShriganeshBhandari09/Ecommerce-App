@@ -10,9 +10,9 @@ const About = () => {
         <Title titleOne={"About"} titleTwo={"Us"} />
       </div>
 
-      <div className="flex gap-10 items-center justify-start">
-        <div>
-          <img src={assets.about_img} alt="" className="w-[800px]" />
+      <div className="flex gap-10 items-center justify-start flex-col lg:flex-row">
+        <div className="w-full">
+          <img src={assets.about_img} alt="" />
         </div>
         <div className="flex flex-col gap-5">
           <p className="text-[#868686] text-lg">
@@ -39,11 +39,11 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-start">
+      <div className="flex flex-col items-start mb-20">
         <div className="py-6">
           <Title titleOne={"Why"} titleTwo={"Choose Us"} />
         </div>
-        <div className="flex">
+        <div className="flex flex-col sm:flex-row">
           <div className="border p-[60px] flex flex-col gap-5">
             <p className="font-semibold">Quality Assurance:</p>
             <p>
@@ -68,12 +68,12 @@ const About = () => {
         </div>
       </div>
 
-      <div className="p-20">
+      <div className="mb-20">
         <Subscribe />
       </div>
 
       <div>
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );

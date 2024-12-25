@@ -4,8 +4,8 @@ import { assets } from "../assets/assets";
 const Footer = () => {
   return (
     <div className="pb-4">
-      <div className="flex justify-between">
-        <div className="w-1/3 flex flex-col gap-2">
+      <div className="flex justify-between flex-col sm:flex-row gap-5">
+        <div className="sm:w-1/3 flex flex-col gap-2">
           <img src={assets.logo} alt="" className="w-[180px]" />
           <p className="text-[#595959]">
             Lorem Ipsum is simply dummy text of the printing and typesetting

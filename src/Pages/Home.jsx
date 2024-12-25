@@ -9,27 +9,33 @@ const Home = () => {
   const products = useSelector((state) => state.product.productsList);
   return (
     <>
-      <div className="flex justify-between items-center border border-gray-400 mb-20">
-        <div className="flex justify-center items-start flex-col mx-auto">
-          <div className="flex justify-center items-center gap-2">
-            <hr className="w-[44px] h-[3px] bg-[#484848]" />
-            <p className="text-[18px] uppercase text-[#414141]">
-              Our Bestsellers
-            </p>
-          </div>
+      <div className="border border-gray-400 flex flex-col sm:flex-row w-full mb-20">
+        <div className="flex justify-center items-center py-10 sm:w-1/2">
+          <div className="flex flex-col gap-2 lg:gap-4">
+            <div className="flex items-center gap-2 ">
+              <hr className="w-[44px] h-[3px] bg-[#484848]" />
+              <p className="text-[18px] lg:text-[20px] uppercase text-[#414141]">
+                Our Bestsellers
+              </p>
+            </div>
 
-          <h1 className="font-prata text-[60px] text-[#414141]">
-            Latest Arrivals
-          </h1>
-          <div className="flex justify-center items-center gap-2 ">
-            <p className="text-[18px] uppercase text-[#414141] font-bold">
-              Shop Now
-            </p>
-            <hr className="w-[44px] h-[2px] bg-[#484848]" />
+            <h1 className="font-prata text-4xl lg:text-5xl text-[#414141]">
+              Latest Arrivals
+            </h1>
+            <div className="flex items-center gap-2 ">
+              <p className="text-[18px] lg:text-[20px] uppercase text-[#414141] font-bold">
+                Shop Now
+              </p>
+              <hr className="w-[44px] h-[2px] bg-[#484848]" />
+            </div>
           </div>
         </div>
-        <div>
-          <img src={assets.hero_img} alt="" className="h-[600px]" />
+        <div className="w-full sm:w-1/2">
+          <img
+            src={assets.hero_img}
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
@@ -41,7 +47,7 @@ const Home = () => {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the."
           }
         />
-        <div className="grid grid-cols-5 gap-x-5">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-x-5">
           {products.slice(0, 10).map((product) => {
             return <ProductCard key={product._id} product={product} />;
           })}
@@ -56,7 +62,7 @@ const Home = () => {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the."
           }
         />
-        <div className="grid grid-cols-5 gap-x-5">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-x-5">
           {products
             .filter((product) => product.bestseller === true)
             .slice(0, 5)
@@ -65,21 +71,21 @@ const Home = () => {
             })}
         </div>
       </div>
-      <div className="mb-20 flex justify-around items-center">
-        <div className="flex justify-center items-center flex-col gap-2">
+      <div className="mb-20 flex justify-center items-center flex-col sm:flex-row gap-10 sm:justify-around">
+        <div className="flex justify-center items-center flex-col">
           <img src={assets.exchange_icon} alt="" />
-          <p>Easy Exchange Policy</p>
-          <p>We offer hassle free exchange policy</p>
+          <p className="text-center">Easy Exchange Policy</p>
+          <p className="text-center">We offer hassle free exchange policy</p>
         </div>
-        <div className="flex justify-center items-center flex-col gap-2">
+        <div className="flex justify-center items-center flex-col">
           <img src={assets.quality_icon} alt="" />
-          <p>7 Days Return Policy</p>
-          <p>We provide 7 days free return policy</p>
+          <p className="text-center">7 Days Return Policy</p>
+          <p className="text-center">We provide 7 days free return policy</p>
         </div>
-        <div className="flex justify-center items-center flex-col gap-2">
+        <div className="flex justify-center items-center flex-col">
           <img src={assets.support_img} alt="" />
-          <p>Best customer support</p>
-          <p>we provide 24/7 customer support</p>
+          <p className="text-center">Best customer support</p>
+          <p className="text-center">we provide 24/7 customer support</p>
         </div>
       </div>
       <div className="mb-20">

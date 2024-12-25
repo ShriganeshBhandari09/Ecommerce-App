@@ -5,12 +5,12 @@ import Title from "../components/title";
 
 const Contact = () => {
   return (
-    <div className="border-t-2 p-4">
+    <div className="border-t-2 ">
       <Title titleOne={"Contact"} titleTwo={"Us"} />
 
-      <div className="flex justify-center items-center gap-8 p-10">
-        <div className="w-[500px]">
-          <img src={assets.contact_img} alt="" />
+      <div className="flex justify-center items-center gap-5 flex-col sm:flex-row sm:gap-10 sm:p-10 mb-20">
+        <div>
+          <img src={assets.contact_img} alt="" className="sm:w-[500px]" />
         </div>
         <div className="flex flex-col gap-8">
           <p className="text-xl font-semibold text-[#4E4E4E]">Our Store</p>
@@ -35,7 +35,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="p-20">
+      <div className="mb-20">
         <Subscribe />
       </div>
 
