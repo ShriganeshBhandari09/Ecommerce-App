@@ -6,7 +6,7 @@ const ForgotPassword = () => {
         <hr className="w-[50px] h-[3px] bg-[#484848]" />
       </div>
 
-      <div className="w-full flex flex-col gap-4 sm:w-3/4 sm:mx-auto lg:w-1/3">
+      <div className="w-full flex flex-col gap-4 sm:w-1/2 sm:mx-auto lg:w-1/3">
         <div>
           <label htmlFor="">Email</label>
           <input
