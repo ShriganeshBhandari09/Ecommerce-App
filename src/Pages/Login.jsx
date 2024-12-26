@@ -43,7 +43,7 @@ const Login = () => {
         </button>
 
         <div className="text-center">
-          Don&apos;t have an account?{" "}
+          Don&apos;t have an account?
           <NavLink to="/signup" className="text-[#868686] underline">
             Signup
           </NavLink>

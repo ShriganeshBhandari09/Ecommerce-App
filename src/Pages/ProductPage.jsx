@@ -11,7 +11,6 @@ const ProductPage = () => {
   const products = useSelector((state) => state.product.productsList);
   const [displayProduct, setDisplayProduct] = useState([]);
   const [displayImage, setDisplayImage] = useState(0);
-
   useEffect(() => {
     const filterProduct = products.filter((product) => product._id === id);
     setDisplayProduct(filterProduct);
@@ -46,7 +45,7 @@ const ProductPage = () => {
                   <img
                     src={product.image[displayImage]}
                     alt=""
-                    className="w-full"
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
@@ -133,13 +132,13 @@ const ProductPage = () => {
               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the."
             }
           />
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-x-5">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-5">
             {products.slice(5, 10).map((product) => {
               return <ProductCard key={product._id} product={product} />;
             })}
           </div>
         </div>
-        <div className="">
+        <div>
           <Footer />
         </div>
       </div>
