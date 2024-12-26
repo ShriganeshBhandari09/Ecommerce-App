@@ -67,9 +67,11 @@ const Cart = () => {
             <p className="font-semibold">$ {totalAmount + shippingFees}.00</p>
           </div>
         </div>
-        <button className="uppercase px-7 py-2 bg-black text-white mt-10 w-fit">
-          Proceed to checkout
-        </button>
+        <div className="float-right">
+          <button className="uppercase px-7 py-2 bg-black text-white mt-10 w-fit">
+            Proceed to checkout
+          </button>
+        </div>
       </div>
       <Footer />
     </div>
