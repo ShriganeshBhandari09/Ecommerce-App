@@ -1,7 +1,7 @@
 import { assets } from "../assets/assets";
 import Footer from "../components/Footer";
 import Subscribe from "../components/Subscribe";
-import Title from "../components/title";
+import Title from "../components/Title";
 
 const Contact = () => {
   return (

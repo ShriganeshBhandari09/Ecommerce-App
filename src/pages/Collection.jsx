@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import ProductCard from "../components/ProductCard";
-import Title from "../components/title";
+import Title from "../components/Title";
 import Footer from "../components/Footer";
 
 const Collection = () => {

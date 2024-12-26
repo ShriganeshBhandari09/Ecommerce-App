@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { assets } from "../assets/assets";
-import Title from "../components/title";
+import Title from "../components/Title";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 

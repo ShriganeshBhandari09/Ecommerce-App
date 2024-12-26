@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { assets } from "../assets/assets";
 import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
-import Title from "../components/title";
+import Title from "../components/Title";
 
 const ProductPage = () => {
   const { id } = useParams();
