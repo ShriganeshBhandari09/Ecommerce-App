@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 
 const Login = () => {
   return (
-    <div className="border-t-2 p-4">
+    <div className="border-t-2">
       <div className=" flex justify-center items-center gap-2 text-4xl pb-4 mt-10 sm:mt-20">
         <h2 className="font-prata ">Login</h2>
         <hr className="w-[50px] h-[3px] bg-[#484848]" />
@@ -43,11 +43,13 @@ const Login = () => {
         </button>
 
         <div className="text-center">
-          Don&apos;t have an account? <NavLink to="/signup" className="text-[#868686] underline">Signup</NavLink>
+          Don&apos;t have an account?{" "}
+          <NavLink to="/signup" className="text-[#868686] underline">
+            Signup
+          </NavLink>
         </div>
       </div>
     </div>
   );
 };
-
 export default Login;

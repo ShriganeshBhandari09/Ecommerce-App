@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Home from "./Pages/Home";
-import Collection from "./Pages/Collection";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
-import Cart from "./Pages/Cart";
-import Login from "./Pages/Login";
-import SignUp from "./Pages/SignUp";
-import ForgotPassword from "./Pages/ForgotPassword";
-import ProductPage from "./Pages/ProductPage";
+import Home from "./pages/Home";
+import Collection from "./pages/Collection";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="product/:id" element={<ProductPage/>}/>
+        <Route path="product/:id" element={<ProductPage />} />
       </Routes>
     </div>
   );
