@@ -37,9 +37,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="mb-20">
-        <Subscribe />
-      </div>
+      <Subscribe />
 
       <div>
         <Footer />
