@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 * {
   font-family: Outfit;
 }
@@ -11,8 +14,13 @@ a.active hr {
   display: flex;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
 
-/* a.active {
-  background-color: black;
-  color: white;
-} */
+@media (max-width: 640px) {
+  a.active {
+    background-color: black;
+    color: white;
+  }
+}

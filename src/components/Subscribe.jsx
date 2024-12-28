@@ -15,7 +15,7 @@ const Subscribe = () => {
             name=""
             id=""
             placeholder="Email"
-            className="px-2 w-full"
+            className="px-2 w-full outline-none"
           />
           <button className="bg-black text-white px-6 py-3">Subscribe</button>
         </div>

@@ -1,15 +1,16 @@
 import { NavLink } from "react-router";
+// import Subscribe from "../components/Subscribe";
 // import Footer from "../components/Footer";
 
 const Login = () => {
   return (
-    <div className="border-t-2">
+    <div className="border-t-2 p-4">
       <div className=" flex justify-center items-center gap-2 text-4xl pb-4 mt-10 sm:mt-20">
         <h2 className="font-prata ">Login</h2>
         <hr className="w-[50px] h-[3px] bg-[#484848]" />
       </div>
 
-      <div className="w-full flex flex-col gap-4 sm:w-1/2 sm:mx-auto lg:w-1/3">
+      <div className="w-full flex flex-col gap-4 sm:w-1/2 sm:mx-auto lg:w-1/3 mb-20">
         <div>
           <label htmlFor="email">Email</label>
           <input
@@ -49,7 +50,11 @@ const Login = () => {
           </NavLink>
         </div>
       </div>
+{/* 
+      <Subscribe />
+      <Footer /> */}
     </div>
   );
 };
+
 export default Login;

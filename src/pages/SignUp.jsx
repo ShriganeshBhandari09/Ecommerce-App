@@ -1,5 +1,7 @@
 import { NavLink } from "react-router";
 // import Footer from "../components/Footer";
+// import Subscribe from "../components/Subscribe";
+// import Footer from "../components/Footer";
 
 const SignUp = () => {
   return (
@@ -9,7 +11,7 @@ const SignUp = () => {
         <hr className="w-[50px] h-[3px] bg-[#484848]" />
       </div>
 
-      <div className="w-full flex flex-col gap-4 sm:w-1/2 sm:mx-auto lg:w-1/3">
+      <div className="w-full flex flex-col gap-4 sm:w-1/2 sm:mx-auto lg:w-1/3 mb-20">
         <div>
           <label htmlFor="name">Name</label>
           <input
@@ -56,6 +58,9 @@ const SignUp = () => {
           Have an Account? <NavLink to="/login" className="text-[#868686] underline">Login</NavLink>
         </div>
       </div>
+
+      {/* <Subscribe/>
+      <Footer/> */}
     </div>
   );
 };

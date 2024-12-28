@@ -11,9 +11,10 @@ const ProductPage = () => {
   const products = useSelector((state) => state.product.productsList);
   const [displayProduct, setDisplayProduct] = useState([]);
   const [displayImage, setDisplayImage] = useState(0);
+  const [toggle, setToggle] = useState(0);
   useEffect(() => {
-    const filterProduct = products.filter((product) => product._id === id);
-    setDisplayProduct(filterProduct);
+    const filterProduct = products.find((product) => product._id === id);
+    setDisplayProduct([filterProduct]);
   }, [products, id]);
 
   return (
@@ -25,15 +26,15 @@ const ProductPage = () => {
               key={product._id}
               className="flex flex-col mt-10 gap-3 lg:flex-row lg:gap-10"
             >
-              <div className="flex flex-col-reverse gap-3 sm:flex-row">
-                <div className="flex gap-3 sm:flex-col">
+              <div className="flex flex-col-reverse gap-3 sm:flex-row h-full">
+                <div className="flex gap-3 sm:flex-col ">
                   {product.image.map((image, id) => {
                     return (
                       <div key={id}>
                         <img
                           src={image}
                           alt=""
-                          className="w-[100px] sm:w-[160px] lg:w-[120px] cursor-pointer hover:border-2"
+                          className="sm:max-w-24 cursor-pointer hover:border-2"
                           onClick={() => setDisplayImage(id)}
                           onMouseEnter={() => setDisplayImage(id)}
                         />
@@ -41,11 +42,11 @@ const ProductPage = () => {
                     );
                   })}
                 </div>
-                <div className="w-full">
+                <div className="sm:w-[24rem] lg:w-[30rem]">
                   <img
                     src={product.image[displayImage]}
                     alt=""
-                    className="w-full h-auto"
+                    className="w-full sm:w-[24rem] lg:w-[30rem]"
                   />
                 </div>
               </div>
@@ -102,25 +103,37 @@ const ProductPage = () => {
 
         <div className="mt-10 mb-20">
           <div className="flex ">
-            <div className="border px-4  py-2">Description</div>
-            <div className="border px-4 py-2 border-l-0">Reviews</div>
+            <button className="border px-4 py-2" onClick={() => setToggle(0)}>
+              Description
+            </button>
+            <button
+              className={`border px-4 py-2 border-l-0`}
+              onClick={() => setToggle(1)}
+            >
+              Reviews
+            </button>
           </div>
           <div className="border p-4 flex flex-col gap-2 text-[#6b7280]">
-            <p>
-              An e-commerce website is an online platform that facilitates the
-              buying and selling of products or services over the internet. It
-              serves as a virtual marketplace where businesses and individuals
-              can showcase their products, interact with customers, and conduct
-              transactions without the need for a physical presence. E-commerce
-              websites have gained immense popularity due to their convenience,
-              accessibility, and the global reach they offer.
-            </p>
-            <p>
-              E-commerce websites typically display products or services along
-              with detailed descriptions, images, prices, and any available
-              variations (e.g., sizes, colors). Each product usually has its own
-              dedicated page with relevant information.
-            </p>
+            {toggle === 0 &&
+              displayProduct.map((product, index) => {
+                return <p key={index}>{product.longDescription}</p>;
+              })}
+            {toggle === 1 &&
+              displayProduct.map((product, index) => {
+                return (
+                  <div key={index} className="flex flex-col gap-4">
+                    {product.reviews.map((review, index) => (
+                      <div key={index} className="flex flex-col">
+                        <div className="flex gap-4">
+                          <p>{review.user}</p>
+                          <p>{review.rating}</p>
+                        </div>
+                        <p>{review.comment}</p>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
           </div>
         </div>
 
@@ -132,7 +145,7 @@ const ProductPage = () => {
               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the."
             }
           />
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-5">
             {products.slice(5, 10).map((product) => {
               return <ProductCard key={product._id} product={product} />;
             })}

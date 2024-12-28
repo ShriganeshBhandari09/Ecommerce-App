@@ -14,7 +14,7 @@ const LatestProducts = () => {
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the."
         }
       />
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-x-5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-5">
         {products.slice(0, 10).map((product) => {
           return <ProductCard key={product._id} product={product} />;
         })}
