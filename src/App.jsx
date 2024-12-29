@@ -11,14 +11,16 @@ import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
 import ProductPage from "./pages/ProductPage";
 import Orders from "./pages/Orders";
+import { useState } from "react";
 
 function App() {
+  const [searchToggle, setSearchToggle] = useState(false);
   return (
     <div className="px-3 sm:px-[5vw] lg:px-[9vw]">
-      <Navbar />
+      <Navbar searchToggle={searchToggle} setSearchToggle={setSearchToggle} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/collections" element={<Collection />} />
+        <Route path="/collections" element={<Collection searchToggle={searchToggle} setSearchToggle={setSearchToggle} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
@@ -27,7 +29,6 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="product/:id" element={<ProductPage />} />
         <Route path="/orders" element={<Orders />} />
-
       </Routes>
     </div>
   );

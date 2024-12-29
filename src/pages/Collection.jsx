@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
 
-const Collection = () => {
+const Collection = ({ searchToggle, setSearchToggle }) => {
   const products = useSelector((state) => state.product.productsList);
   const [searchValue, setSearchValue] = useState("");
   const [filterProducts, setFilterProducts] = useState(products);
@@ -31,27 +31,36 @@ const Collection = () => {
 
   return (
     <>
-      <div className="border-t-2 p-4 border-b-2 mb-7 bg-gray-50">
-        <div className="flex items-center gap-4 justify-center">
-          <div className="border w-full lg:w-1/2 flex items-center px-2 py-2 rounded-3xl">
-            <input
-              type="text"
-              name=""
-              id=""
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
-              className="w-full outline-none border-none  text-lg bg-inherit"
-            />
-            <img
-              src={assets.search_icon}
-              alt=""
-              className="w-[20px] h-[20px] mr-2"
-            />
+      <div className="border-t-2 mb-7 ">
+        {searchToggle && (
+          <div className="bg-gray-50 border-b-2 p-4">
+            <div className="flex items-center gap-4 justify-center">
+              <div className="border w-full lg:w-1/2 flex items-center px-2 py-2 rounded-3xl">
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                  className="w-full outline-none border-none  text-lg bg-inherit"
+                />
+                <img
+                  src={assets.search_icon}
+                  alt=""
+                  className="w-[20px] h-[20px] mr-2"
+                />
+              </div>
+              <div>
+                <img
+                  src={assets.cross_icon}
+                  alt=""
+                  className="cursor-pointer"
+                  onClick={() => setSearchToggle(!searchToggle)}
+                />
+              </div>
+            </div>
           </div>
-          <div>
-            <img src={assets.cross_icon} alt="" className="" />
-          </div>
-        </div>
+        )}
       </div>
       <div className="flex mb-20 gap-10">
         <div className="w-[200px] lg:flex flex-col gap-3 hidden">

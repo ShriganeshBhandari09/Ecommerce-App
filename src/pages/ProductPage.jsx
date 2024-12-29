@@ -12,6 +12,7 @@ const ProductPage = () => {
   const [displayProduct, setDisplayProduct] = useState([]);
   const [displayImage, setDisplayImage] = useState(0);
   const [toggle, setToggle] = useState(0);
+
   useEffect(() => {
     const filterProduct = products.find((product) => product._id === id);
     setDisplayProduct([filterProduct]);

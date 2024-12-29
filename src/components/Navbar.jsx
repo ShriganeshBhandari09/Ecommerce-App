@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-const Navbar = () => {
+const Navbar = ({ searchToggle, setSearchToggle }) => {
   const [navActive, setNavActive] = useState(false);
   const cartProducts = useSelector((state) => state.cart.cartList);
   const [searchVisible, setSearchVisible] = useState(false);
@@ -55,9 +55,10 @@ const Navbar = () => {
             <img
               src={assets.search_icon}
               alt=""
-              className={`w-[20px] h-[20px] ${
+              className={`w-[20px] h-[20px] cursor-pointer ${
                 searchVisible ? "" : "invisible"
               }`}
+              onClick={() => setSearchToggle(!searchToggle)}
             />
           }
           <NavLink to="/login">
