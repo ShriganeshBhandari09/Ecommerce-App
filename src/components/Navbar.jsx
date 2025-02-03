@@ -1,4 +1,9 @@
-import { NavLink, useLocation } from "react-router";
+import {
+  NavLink,
+  useLocation,
+  Link,
+  useNavigate,
+} from "react-router";
 import { assets } from "../assets/assets";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -7,11 +12,13 @@ const Navbar = ({ searchToggle, setSearchToggle }) => {
   const [navActive, setNavActive] = useState(false);
   const cartProducts = useSelector((state) => state.cart.cartList);
   const [searchVisible, setSearchVisible] = useState(false);
+  const [token, setToken] = useState(null);
 
   let location = useLocation();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    // Google Analytics
     if (location.pathname === "/collections") {
       setSearchVisible(true);
     } else {
@@ -61,14 +68,30 @@ const Navbar = ({ searchToggle, setSearchToggle }) => {
               onClick={() => setSearchToggle(!searchToggle)}
             />
           }
-          <NavLink to="/login">
+          <div className="group relative">
             <img
+              onClick={() => (token ? null : navigate("/login"))}
               src={assets.profile_icon}
               alt=""
-              className="w-[20px] h-[20px]"
+              className="w-[20px] h-[20px] cursor-pointer"
             />
-          </NavLink>
-          <NavLink to="/cart">
+            {token && (
+              <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
+                <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
+                  <Link to="/profile">
+                    <p className="cursor-pointer hover:text-black">
+                      My Profile
+                    </p>
+                  </Link>
+                  <Link to="/orders">
+                    <p className="cursor-pointer hover:text-black"> Orders</p>
+                  </Link>
+                  <p className="cursor-pointer hover:text-black">My Logout</p>
+                </div>
+              </div>
+            )}
+          </div>
+          <Link to="/cart">
             <div className="relative">
               <img
                 src={assets.cart_icon}
@@ -79,7 +102,7 @@ const Navbar = ({ searchToggle, setSearchToggle }) => {
                 {cartProducts.length}
               </p>
             </div>
-          </NavLink>
+          </Link>
           <div className="md:hidden">
             <img
               src={assets.menu_icon}
@@ -120,5 +143,7 @@ const Navbar = ({ searchToggle, setSearchToggle }) => {
     </>
   );
 };
+
+Navbar.propTypes;
 
 export default Navbar;
